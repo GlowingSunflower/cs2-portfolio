@@ -1,9 +1,7 @@
-# cs2-portfolio
+# CS2-PORTFOLIO_SOLEDAD
 ## Jessie Marie B. Soledad
 ## 8 - Dahlia
 ### submission links 👇👇
 >[hello.py](q1/hello.py) 
 
->https://github.com/GlowingSunflower/cs2-portfolio/blob/main/q1/hello.py
-
->https://github.com/GlowingSunflower/cs2-portfolio/blob/main/q1/Soledad_Jessie%20Marie_Distance.py
+>[Soledad_JessieMarie_Distance.py](q1/Soledad_JessieMarie_Distance.py)
