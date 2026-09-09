@@ -36,7 +36,6 @@ if validregistration:
         else:
             return False, "The registration code must contain exactly 6 characters."
 
-
     print("--- STUDENT REGISTRATION FORM ---")
     input_name = input("Please enter student name: ")
     input_age = input("Please enter your age: ")
@@ -44,57 +43,44 @@ if validregistration:
     input_email = input("Please enter your email: ")
     input_code = input("Please enter registration code (6 characters): ")
 
-
-    # --- ONE BIG IF-ELSE VALIDATION CHAIN ---
-    # Running validations sequentially. If one fails, it sets the reason.
     is_valid = True
     error_message = ""
 
-    # 1. Check Name
+    # Check Name
     success, result = validate_name(input_name)
     if not success:
         is_valid = False
-        error_message = result
-    else:
-        # 2. Check Age
-        success, result = validate_age(input_age)
-        if not success:
-            is_valid = False
-            error_message = result
-        else:
-            # 3. Check Grade Level
-            success, result = validate_grade(input_grade)
-            if not success:
-                is_valid = False
-                error_message = result
-            else:
-                # 4. Check Email
-                success, result = validate_email(input_email)
-                if not success:
-                    is_valid = False
-                    error_message = result
-                else:
-                    # 5. Check Registration Code
-                    success, result = validate_code(input_code)
-                    if not success:
-                        is_valid = False
-                        error_message = result
+        error_message += result + "\n"
 
-    # --- FINAL OUTPUT PRINTING ---
+    # Check Age
+    success, result = validate_age(input_age)
+    if not success:
+        is_valid = False
+        error_message += result + "\n"
+
+    # Check Grade
+    success, result = validate_grade(input_grade)
+    if not success:
+        is_valid = False
+        error_message += result + "\n"
+
+    # Check Email
+    success, result = validate_email(input_email)
+    if not success:
+        is_valid = False
+        error_message += result + "\n"
+
+    # Check Registration Code
+    success, result = validate_code(input_code)
+    if not success:
+        is_valid = False
+        error_message += result + "\n"
+
     if is_valid:
-        print("\n------------------------------")
-        print("REGISTRATION ACCEPTED")
-        print("------------------------------")
-        print(f"Student: {input_name}")
-        print(f"Age: {input_age}")
-        print(f"Grade Level: {input_grade}")
-        print(f"Email: {input_email}")
-        print(f"Registration Code: {input_code}")
+      print("\n------------------------------\nREGISTRATION ACCEPTED\n------------------------------\nStudent:", input_name, "\nAge:", input_age, "\nGrade Level:", input_grade, "\nEmail:", input_email, "\nRegistration Code:", input_code)
+  
     else:
-        print("\n------------------------------")
-        print("REGISTRATION NOT ACCEPTED")
-        print("------------------------------")
-        print(f"Reason: {error_message}")
+      print("\n------------------------------\nREGISTRATION NOT ACCEPTED\n------------------------------\nReasons:\n" + error_message)
 
 else:
     print("System offline.")
