@@ -2,9 +2,9 @@
 
 **Activity:** PSHS Workshop Registration Validator
 
-**Name:** Your Name
+**Name:** Jessie Marie B. Soledad
 
-**Section:** Your Section
+**Section:** Dahlia
 
 **Quarter:** 1
 ---
@@ -89,68 +89,124 @@ Explain the length rule you used.
 > Write your answer here.
 ---
 # Part D - Testing
-Test your program using both valid and invalid inputs.
-| Test | Input / Condition | Validation Being Tested | Expected Output | Actual Output | Result |
-|---:|---|---|---|---|---|
-| 1 | All inputs valid | Normal case | | | |
-| 2 | Blank student name | Presence | | | |
-| 3 | Age = `fourteen` | Data type | | | |
-| 4 | Age = `11` | Minimum boundary | | | |
-| 5 | Age = `18` | Maximum boundary | | | |
-| 6 | Age = `10` | Range | | | |
-| 7 | Grade Level = `13` | Acceptable value | | | |
-| 8 | Email = `studentpshs.edu.ph` | Pattern | | | |
-| 9 | Registration Code = `ABC` | Length | | | |
-| 10 | Registration Code = `CS2026` | Valid length | | | |
-Write **PASS** when the actual output matches the expected output.
-Write **FAIL** when it does not.
----
-# Part E - Output Verification
-Choose any **three tests** from Part D.
-## Verification Test 1
-**Input:**
-```text
-Write the input here.
+Test the program using both valid and invalid inputs.
 
-```
-**Expected Output:**
-```text
-Write the expected output here.
-```
-**Actual Output:**
-```text
-Write the actual output here.
-```
-**Result:** PASS / FAIL
-**Explanation:**
-> Explain why the output is correct or incorrect.
+| Test | Input / Condition            | Validation Being Tested | Expected Output                           | Actual Output                             | Result   |
+| ---: | ---------------------------- | ----------------------- | ----------------------------------------- | ----------------------------------------- | -------- |
+|    1 | All inputs valid             | Normal case             | `Registration accepted.`                  | `Registration accepted.`                  | **PASS** |
+|    2 | Blank student name           | Presence                | `Student name required.`                  | `Student name required.`                  | **PASS** |
+|    3 | Age = `fourteen`             | Data type               | `Age must be a number.`                   | `Age must be a number.`                   | **PASS** |
+|    4 | Age = `11`                   | Minimum boundary        | `Registration accepted.`                  | `Registration accepted.`                  | **PASS** |
+|    5 | Age = `18`                   | Maximum boundary        | `Registration accepted.`                  | `Registration accepted.`                  | **PASS** |
+|    6 | Age = `10`                   | Range                   | `Age must be between 11 and 18.`          | `Age must be between 11 and 18.`          | **PASS** |
+|    7 | Grade Level = `13`           | Acceptable value        | `Grade level must be between 7 and 12.`   | `Grade level must be between 7 and 12.`   | **PASS** |
+|    8 | Email = `studentpshs.edu.ph` | Pattern                 | `Invalid email address.`                  | `Invalid email address.`                  | **PASS** |
+|    9 | Registration Code = `ABC`    | Length                  | `Registration code must be 6 characters.` | `Registration code must be 6 characters.` | **PASS** |
+|   10 | Registration Code = `CS2026` | Valid length            | `Registration accepted.`                  | `Registration accepted.`                  | **PASS** |
+
+> **PASS** means the actual output matches the expected output.
+> **FAIL** means the actual output does not match the expected output.
+
 ---
+
+# Part E - Output Verification
+
+Choose three tests from Part D and compare the expected output with the actual output.
+
+## Verification Test 1
+
+**Input:**
+
+```text
+Student Name: Juan Dela Cruz
+Age: 14
+Grade Level: 8
+Email: juan@pshs.edu.ph
+Registration Code: CS2026
+```
+
+**Expected Output:**
+
+```text
+Registration accepted.
+```
+
+**Actual Output:**
+
+```text
+Registration accepted.
+```
+
+**Result:** **PASS**
+
+**Explanation:**
+
+> The output is correct because all the information provided meets the program's validation rules. The age and grade level are within the accepted ranges, the email follows the required format, and the registration code is valid.
+
+---
+
 ## Verification Test 2
+
 **Input:**
+
 ```text
-Write the input here.
+Student Name:
+Age: 14
+Grade Level: 8
+Email: juan@pshs.edu.ph
+Registration Code: CS2026
 ```
+
 **Expected Output:**
+
 ```text
-Write the expected output here.
+Student name required.
 ```
+
 **Actual Output:**
+
 ```text
-Write the actual output here.
+Student name required.
 ```
-**Result:** PASS / FAIL
+
+**Result:** **PASS**
+
 **Explanation:**
-> Explain why the output is correct or incorrect.
+
+> The output is correct because the student name was left blank. The program detects the missing required input and rejects the registration.
+
 ---
+
 ## Verification Test 3
+
 **Input:**
+
 ```text
-Write the input here.
+Student Name: Juan Dela Cruz
+Age: 10
+Grade Level: 8
+Email: juan@pshs.edu.ph
+Registration Code: CS2026
 ```
+
 **Expected Output:**
+
 ```text
-Write the expected output here.
+Age must be between 11 and 18.
 ```
+
+**Actual Output:**
+
+```text
+Age must be between 11 and 18.
+```
+
+**Result:** **PASS**
+
+**Explanation:**
+
+> The output is correct because the entered age of 10 is below the minimum allowed age of 11. The program correctly identifies the input as invalid and rejects the registration.
+
 **Actual Output:**
 
 ```text
