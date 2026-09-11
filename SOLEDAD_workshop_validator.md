@@ -25,15 +25,15 @@ The program validates:
 ---
 ## Validation Questions
 ### 1. Why should the student name not be blank?
-> Write your answer here.
+> The student name is required to properly identify the student.
 ### 2. Why should age be checked for both data type and range?
-> Write your answer here.
+> To make sure the age is a valid number and is within the allowed range of 11 to 18.
 ### 3. Why should grade level only accept specific values?
-> Write your answer here.
+> To make sure only valid grade levels from 7 to 12 are accepted.
 ### 4. What format requirements did you use for the email address?
-> Write your answer here.
+> The email must contain both “@” and “.”.
 ### 5. What length requirement did you use for the registration code?
-> Write your answer here.
+> The registration code must contain exactly 6 characters.
 ---
 # Part B - Program Design
 Before writing your program, create either a **flowchart or pseudocode** showing its logic.
