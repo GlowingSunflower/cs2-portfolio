@@ -9,3 +9,5 @@
 >[SOLEDAD - PA2 - Score Checker.py](q1/SOLEDAD_score_checker.py)
 >
 >[SOLEDAD - PA2 - Score Checker.md](q1/SOLEDAD_score_checker.md)
+>
+>[SOLEDAD - PA3 - Workshop Validator.py](q1/SOLEDAD_workshop_validator.py)
