@@ -58,7 +58,7 @@ Your design should show:
 ---
 # Part C - Program Implementation
 ## Programming Language
-> Write the programming language used.
+> Python
 ## Source Code File
 [`workshop_validator.py`](workshop_validator.py)
 ## Final Code
