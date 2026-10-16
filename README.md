@@ -3,6 +3,9 @@
 ## _8 - Dahlia_
 > ### (very useless) info about me: I like oranges. ⋆｡‧˚ʚ🍊ɞ˚‧｡⋆
 ### submission links 👇👇
+
+## QUARTER 1
+### Hello World!
 >[hello.py](q1/hello.py)
 
 ### PA1 - Distance
@@ -17,3 +20,5 @@
 >[SOLEDAD - PA3 - Workshop Validator.py](q1/SOLEDAD_workshop_validator.py)
 
 ### PA4 - Secure Registration
+
+## QUARTER 2
