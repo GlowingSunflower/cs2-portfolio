@@ -18,12 +18,14 @@
 
 ### PA3 - Workshop Validator
 >[SOLEDAD - PA3 - Workshop Validator.py](q1/SOLEDAD_workshop_validator.py)
->[SOLEDAD - PA3 - Workshop Validator.md](q1/SOLEDAD_workshop_validator.md)
 >
+>[SOLEDAD - PA3 - Workshop Validator.md](q1/SOLEDAD_workshop_validator.md)
+
 ### PA4 - Secure Registration
 >[SOLEDAD - PA4 - Secure Registration.py](q1/SOLEDAD_secure_registration.py)
->[SOLEDAD - PA4 - Secure Registration.md](q1/SOLEDAD_secure_registration.md)
 >
+>[SOLEDAD - PA4 - Secure Registration.md](q1/SOLEDAD_secure_registration.md)
+
 ## QUARTER 2
 ### PA1 - Problem 1: The Canteen Purchase Calculator
 >[SOLEDAD - PA1 - Canteen Purchase Calculator.py](q2/SOLEDAD_canteen_purchase_calcu.py)
