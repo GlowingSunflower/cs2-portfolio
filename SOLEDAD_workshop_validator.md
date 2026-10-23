@@ -44,8 +44,150 @@ OR
 ## Pseudocode
 
 ```text
-START
-Write your pseudocode here.
+BEGIN
+
+    registration ← TRUE
+
+    IF registration = TRUE THEN
+
+        FUNCTION valid_name(name)
+            IF name = "" THEN
+                RETURN FALSE, "Student name required."
+            ELSE
+                RETURN TRUE, name
+            END IF
+        END FUNCTION
+
+
+        FUNCTION valid_age(age_str)
+            TRY
+                age ← INTEGER(age_str)
+
+                IF age >= 11 AND age <= 18 THEN
+                    RETURN TRUE, age
+                ELSE
+                    RETURN FALSE, "Your age must be between 11 and 18 to proceed."
+                END IF
+
+            CATCH ValueError
+                RETURN FALSE, "Please input a valid integer (ex. 12, 15)."
+            END TRY
+        END FUNCTION
+
+
+        FUNCTION valid_grade(grade_str)
+            grades ← ["7", "8", "9", "10", "11", "12"]
+
+            IF grade_str IN grades THEN
+                RETURN TRUE, INTEGER(grade_str)
+            ELSE
+                RETURN FALSE, "Invalid grade level."
+            END IF
+        END FUNCTION
+
+
+        FUNCTION valid_email(email)
+            IF "@" IN email AND "." IN email THEN
+                RETURN TRUE, email
+            ELSE
+                RETURN FALSE, "Invalid email format. Must contain '@' and '.'."
+            END IF
+        END FUNCTION
+
+
+        FUNCTION valid_code(code)
+            IF LENGTH(code) = 6 THEN
+                RETURN TRUE, code
+            ELSE
+                RETURN FALSE, "The registration code must contain exactly 6 characters."
+            END IF
+        END FUNCTION
+
+
+        OUTPUT "--- STUDENT REGISTRATION FORM ---"
+
+        INPUT input_name
+        INPUT input_age
+        INPUT input_grade
+        INPUT input_email
+        INPUT input_code
+
+        is_valid ← TRUE
+        error_message ← ""
+
+
+        // Check Name
+        success, result ← valid_name(input_name)
+
+        IF success = FALSE THEN
+            is_valid ← FALSE
+            error_message ← error_message + result + NEWLINE
+        END IF
+
+
+        // Check Age
+        success, result ← valid_age(input_age)
+
+        IF success = FALSE THEN
+            is_valid ← FALSE
+            error_message ← error_message + result + NEWLINE
+        END IF
+
+
+        // Check Grade
+        success, result ← valid_grade(input_grade)
+
+        IF success = FALSE THEN
+            is_valid ← FALSE
+            error_message ← error_message + result + NEWLINE
+        END IF
+
+
+        // Check Email
+        success, result ← valid_email(input_email)
+
+        IF success = FALSE THEN
+            is_valid ← FALSE
+            error_message ← error_message + result + NEWLINE
+        END IF
+
+
+        // Check Registration Code
+        success, result ← valid_code(input_code)
+
+        IF success = FALSE THEN
+            is_valid ← FALSE
+            error_message ← error_message + result + NEWLINE
+        END IF
+
+
+        IF is_valid = TRUE THEN
+
+            OUTPUT "------------------------------"
+            OUTPUT "REGISTRATION ACCEPTED"
+            OUTPUT "------------------------------"
+            OUTPUT "Student: ", input_name
+            OUTPUT "Age: ", input_age
+            OUTPUT "Grade Level: ", input_grade
+            OUTPUT "Email: ", input_email
+            OUTPUT "Registration Code: ", input_code
+
+        ELSE
+
+            OUTPUT "------------------------------"
+            OUTPUT "REGISTRATION NOT ACCEPTED"
+            OUTPUT "------------------------------"
+            OUTPUT "Reasons:"
+            OUTPUT error_message
+
+        END IF
+
+    ELSE
+
+        OUTPUT "Input required"
+
+    END IF
+
 END
 ```
 
@@ -64,53 +206,121 @@ Your design should show:
 ## Final Code
 ```python
 
-import math
+registration = True
 
-print("Hello user. Please enter the values.")
-x1 = int(input("Please enter x1: "))
-y1 = int(input("Please enter y1: "))
-x2 = int(input("Please enter x2: "))
-y2 = int(input("Please enter y2: "))
+if registration:
+    
+    def valid_name(name):
+        if name == "":
+            return False, "Student name required."
+        return True, name
 
-#difference:
-xdiff = x2 - x1
-ydiff = y2 - y1
+    def valid_age(age_str):
+        try:
+            age = int(age_str)
+            if 11 <= age <= 18:
+                return True, age
+            else:
+                return False, "Your age must be between 11 and 18 to proceed."
+        except ValueError:
+            return False, "Please input a valid integer (ex. 12, 15)."
 
-#exponent:
-xsquared = pow(xdiff, 2)
-ysquared = pow(ydiff, 2)
+    def valid_grade(grade_str):
+        grades = ["7", "8", "9", "10", "11", "12"]
+        if grade_str in grades:
+            return True, int(grade_str)
+        else:
+            return False, "Invalid grade level."
 
-#distance and final product:
-d = math.sqrt(xsquared + ysquared)
-final_product = round(d, 2)
-print("The distance between the two points is:",final_product)
+    def valid_email(email):
+        if "@" in email and "." in email:
+            return True, email
+        else:
+            return False, "Invalid email format. Must contain '@' and '.'."
 
-#Reflection:
-#Using a library is more practical than writing all calculations from scratch because libraries are like a set of tools that can help the the compiler understand what to do.
-#Say for example, without using Python's math library, the compiler wouldn't understand what to do for the square root (sqrt() function).
+    def valid_code(code):
+        if len(code) == 6:
+            return True, code
+        else:
+            return False, "The registration code must contain exactly 6 characters."
+
+    print("--- STUDENT REGISTRATION FORM ---")
+    input_name = input("Please enter student name: ")
+    input_age = input("Please enter your age: ")
+    input_grade = input("Please enter grade level (7-12): ")
+    input_email = input("Please enter your email: ")
+    input_code = input("Please enter registration code (6 characters): ")
+
+    is_valid = True
+    error_message = ""
+
+    # Check Name
+    success, result = valid_name(input_name)
+    if not success:
+        is_valid = False
+        error_message += result + "\n"
+
+    # Check Age
+    success, result = valid_age(input_age)
+    if not success:
+        is_valid = False
+        error_message += result + "\n"
+
+    # Check Grade
+    success, result = valid_grade(input_grade)
+    if not success:
+        is_valid = False
+        error_message += result + "\n"
+
+    # Check Email
+    success, result = valid_email(input_email)
+    if not success:
+        is_valid = False
+        error_message += result + "\n"
+
+    # Check Registration Code
+    success, result = valid_code(input_code)
+    if not success:
+        is_valid = False
+        error_message += result + "\n"
+
+    if is_valid:
+      print("\n------------------------------\nREGISTRATION ACCEPTED\n------------------------------\nStudent:", input_name, "\nAge:", input_age, "\nGrade Level:", input_grade, "\nEmail:", input_email, "\nRegistration Code:", input_code)
+  
+    else:
+      print("\n------------------------------\nREGISTRATION NOT ACCEPTED\n------------------------------\nReasons:\n" + error_message)
+
+else:
+    print("Input required")
 ```
 
 ---
 ## Validation Techniques Used
+
 ### Presence Validation
-Explain where you used presence validation.
-> Write your answer here.
+
+> Presence validation was used to check whether the student name was left blank. If the name is empty, the program displays `Student name required.`
+
 ### Data Type Validation
-Explain where you used data type validation.
-> Write your answer here.
+
+> Data type validation was used to ensure that the age entered is a valid integer. If the user enters non-numeric input, such as `fourteen`, the program displays an error message.
+
 ### Range Validation
-Explain where you used range validation.
-> Write your answer here.
+
+> Range validation was used to ensure that the student's age is between 11 and 18, inclusive. If the age is outside this range, the program rejects the registration.
 
 ### Acceptable Value Validation
-Explain where you used acceptable value validation.
-> Write your answer here.
+
+> Acceptable value validation was used to check whether the entered grade level is one of the accepted values: 7, 8, 9, 10, 11, or 12. Any other value is rejected.
+
 ### Pattern Validation
-Explain the simple pattern rule you used.
-> Write your answer here.
+
+> Pattern validation was used to check whether the email address contains both `@` and `.`. If either character is missing, the program displays an invalid email format message.
+
 ### Length Validation
-Explain the length rule you used.
-> Write your answer here.
+
+> Length validation was used to ensure that the registration code contains exactly 6 characters. If the code is shorter or longer than 6 characters, the program rejects it.
+> 
 ---
 # Part D - Testing
 Test the program using both valid and invalid inputs.
@@ -241,20 +451,31 @@ Write the actual output here.
 > Explain why the output is correct or incorrect.
 ---
 # Reflection
+
 Answer briefly.
+
 ### 1. Why should a program validate input before processing it?
-> Write your answer here.
+
+> Input validation prevents incorrect or invalid data from being processed. It helps ensure accurate results and prevents unexpected errors.
+
 ### 2. What is the difference between input validation and output verification?
-> Write your answer here.
+
+> Input validation checks whether the user's input follows the required rules, while output verification checks whether the program produces the expected output.
+
 ### 3. Which validation technique was easiest for you to implement? Why?
-> Write your answer here.
+
+> Length validation was the easiest because I only needed to check whether the registration code contained exactly 6 characters.
+
 ### 4. Which validation technique was most challenging? Why?
-> Write your answer here.
+
+> Data type validation was the most challenging because I had to handle non-numeric inputs and make sure the age was converted into an integer correctly.
+
 ### 5. How did testing invalid inputs help you improve your program?
-> Write your answer here.
+
+> Testing invalid inputs helped me check whether the program detected errors correctly and displayed the appropriate error messages for invalid information.
+
 ---
 # Files for This Activity
-- [`workshop_validator.py`](workshop_validator.py)
-- `input_validation.md`
-- `workshop_validator_flowchart.png` if a flowchart was used
+- [SOLEDAD - Workshop Validator.py](SOLEDAD_workshop_validator.py)
+- [SOLEDAD - Workshop Validator.md](SOLEDAD_workshop_validator.md)
 ---
