@@ -29,3 +29,5 @@
 ## QUARTER 2
 ### PA1 - Problem 1: The Canteen Purchase Calculator
 >[SOLEDAD - PA1 - Canteen Purchase Calculator.py](q2/SOLEDAD_canteen_purchase_calcu.py)
+>
+>[SOLEDAD - PA3 - INDIV - School Printing Service Calculator.py](q2/SOLEDAD_school_printing_service_calcu.py)
