@@ -31,3 +31,6 @@
 >[SOLEDAD - PA1 - Canteen Purchase Calculator.py](q2/SOLEDAD_canteen_purchase_calcu.py)
 >
 >[SOLEDAD - PA3 - INDIV - School Printing Service Calculator.py](q2/SOLEDAD_school_printing_service_calcu.py)
+>
+### Programming Exercises
+>[SOLEDAD - Programming Exercises Folder](q2/SOLEDAD_Programming_Exercises)
